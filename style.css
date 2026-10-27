@@ -1166,3 +1166,45 @@ img {
     object-fit: cover;
     object-position: center;
 }
+
+/* 1. Pure page par horizontal overflow aur unwanted slider ko rokne ke liye */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+}
+
+/* 2. Floating WhatsApp Button Mobile Fix */
+.floating-whatsapp-btn {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #25d366 !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 28px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    z-index: 99999 !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+.floating-whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile screens ke liye extra safety */
+@media (max-width: 768px) {
+    .floating-whatsapp-btn {
+        bottom: 15px !important;
+        right: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 24px !important;
+    }
+}
