@@ -1053,3 +1053,38 @@ body {
         }
     }
 }
+
+/* Fix Layout Shift (CLS) and Image Performance automatically */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-banner-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+.surgery-card img {
+    width: 100%;
+    height: 220px;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+}
+
+.frameless-thumb img {
+    width: 100%;
+    height: 200px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.doc-portrait-organic {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
