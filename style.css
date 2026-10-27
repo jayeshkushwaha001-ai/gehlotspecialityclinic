@@ -1088,3 +1088,81 @@ img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
 }
+
+/* --- 1. Fix Contrast Errors (Make text darker and readable) --- */
+.hero-subtext, 
+.footer-text, 
+.footer-menu a, 
+.footer-contact-list li, 
+.footer-contact-list a,
+.copyright-text, 
+.credit-text,
+p {
+    color: #334155 !important; /* Rich dark slate for better accessibility contrast */
+}
+
+.tag-label {
+    color: #9d174d !important; /* Darker pink for proper contrast */
+    background: #fce7f3 !important;
+}
+
+.stats-flex .lbl, 
+.trust-details span {
+    color: #475569 !important;
+}
+
+/* --- 2. Fix Layout Shift (CLS) & Image Dimensions --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    content-visibility: auto;
+}
+
+.hero-banner-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    height: auto;
+}
+
+.google-trust-card {
+    min-height: 60px; /* Reserves space to stop layout shifting */
+    contain: layout;
+}
+
+.surgery-card img {
+    width: 100%;
+    height: 220px;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+}
+
+.frameless-thumb img {
+    width: 100%;
+    height: 200px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.doc-portrait-organic {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+
+.frameless-thumb img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: contain !important; 
+    background-color: #f8fafc; 
+}
+
+
+.doc-portrait-organic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
