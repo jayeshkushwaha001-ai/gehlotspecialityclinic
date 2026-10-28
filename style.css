@@ -1209,10 +1209,31 @@ html, body {
     }
 }
 
-/* Fix Layout Shift (CLS) for Google Trust Card */
+/* Google Trust Card Layout Fix */
 .google-trust-card {
-    min-height: 75px !important;
-    contain: layout size style !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    background: #ffffff !important;
+    padding: 12px 18px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+    width: fit-content !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    min-height: unset !important;
+}
+
+.trust-stars {
+    color: #f59e0b !important;
+    font-size: 1rem !important;
+}
+
+.trust-details {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
 }
 
 /* Optimize Doctor Portrait Image display */
