@@ -1208,3 +1208,17 @@ html, body {
         font-size: 24px !important;
     }
 }
+
+/* Fix Layout Shift (CLS) for Google Trust Card */
+.google-trust-card {
+    min-height: 75px !important;
+    contain: layout size style !important;
+}
+
+/* Optimize Doctor Portrait Image display */
+.doc-portrait-organic {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+}
