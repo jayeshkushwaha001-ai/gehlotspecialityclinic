@@ -1146,3 +1146,20 @@ body {
     background-color: #fef2f2 !important;
     color: #991b1b !important;
 }
+
+/* Mobile Table Text Wrap & Cut Fix */
+@media (max-width: 768px) {
+    .diet-table th, 
+    .diet-table td {
+        font-size: 0.8rem !important; /* Mobile ke liye font size thoda chota kiya */
+        padding: 8px 10px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .diet-title {
+        font-size: 0.95rem !important;
+        padding: 10px 14px !important;
+    }
+}
