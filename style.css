@@ -39,6 +39,7 @@ textarea:focus {
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden !important;
 }
 
 body {
@@ -743,7 +744,7 @@ body {
 /* Floating WhatsApp Circle Icon */
 .floating-whatsapp-btn {
     position: fixed;
-    bottom: 85px; right: 20px;
+    bottom: 85px; right: 30px;
     width: 56px; height: 56px;
     background: #25d366;
     color: #ffffff;
@@ -760,55 +761,6 @@ body {
 
 @media (min-width: 768px) {
     .floating-whatsapp-btn { bottom: 30px; right: 30px; }
-}
-
-
-
-
-
-@media (max-width: 768px) {
-    .mobile-sticky-bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: fixed;
-        bottom: 0; left: 0; right: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 10px 14px;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
-        z-index: 9999;
-        border-top: 1px solid var(--border-color);
-        padding-bottom: max(10px, env(safe-area-inset-bottom));
-    }
-
-    .btn-sticky-book {
-        flex: 1;
-        background: linear-gradient(135deg, var(--rose-primary), var(--rose-dark));
-        color: #ffffff;
-        border: none;
-        padding: 13px 18px;
-        font-size: 1rem;
-        font-weight: 700;
-        border-radius: 12px;
-        cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        gap: 8px;
-        box-shadow: 0 4px 12px rgba(219, 39, 119, 0.35);
-    }
-
-    .btn-sticky-call {
-        width: 48px; height: 48px;
-        background: #22c55e;
-        color: #ffffff;
-        border-radius: 12px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 1.15rem; text-decoration: none;
-        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
-    }
-
-    body { padding-bottom: 78px; }
 }
 
 /* Banner Image Section Styling */
@@ -838,9 +790,6 @@ body {
         border-radius: 8px;
     }
 }
-
-
-
 
 .site-footer {
     margin-bottom: 0;
@@ -1054,41 +1003,6 @@ body {
     }
 }
 
-/* Fix Layout Shift (CLS) and Image Performance automatically */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero-banner-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
-}
-
-.surgery-card img {
-    width: 100%;
-    height: 220px;
-    aspect-ratio: 16 / 11;
-    object-fit: cover;
-}
-
-.frameless-thumb img {
-    width: 100%;
-    height: 200px;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
-
-.doc-portrait-organic {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-
 /* --- 1. Fix Contrast Errors (Make text darker and readable) --- */
 .hero-subtext, 
 .footer-text, 
@@ -1111,7 +1025,6 @@ p {
     color: #475569 !important;
 }
 
-/* --- 2. Fix Layout Shift (CLS) & Image Dimensions --- */
 img {
     max-width: 100%;
     height: auto;
@@ -1138,13 +1051,6 @@ img {
     object-fit: cover;
 }
 
-.frameless-thumb img {
-    width: 100%;
-    height: 200px;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
-
 .doc-portrait-organic {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -1167,79 +1073,76 @@ img {
     object-position: center;
 }
 
-/* 1. Pure page par horizontal overflow aur unwanted slider ko rokne ke liye */
+
+
+/* --- 1. Root aur Body par Overflow Hidden (Horizontal scroll aur WhatsApp button fix) --- */
 html, body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative;
 }
 
-/* 2. Floating WhatsApp Button Mobile Fix */
-.floating-whatsapp-btn {
+/* Fixed navbar ki wajah se content chup na ho, isliye body par top padding */
+body {
+    padding-top: 75px !important; /* Apni navbar ki height ke hisab se ise adjust kar lena */
+}
+
+/* --- 2. Bulletproof Fixed Navbar (Sticky ka lafda hi khatam) --- */
+.main-header {
     position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-    background-color: #25d366 !important;
-    color: #ffffff !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 28px !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
-    z-index: 99999 !important;
-    text-decoration: none !important;
-    transition: transform 0.3s ease !important;
-}
-
-.floating-whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Mobile screens ke liye extra safety */
-@media (max-width: 768px) {
-    .floating-whatsapp-btn {
-        bottom: 15px !important;
-        right: 15px !important;
-        width: 45px !important;
-        height: 45px !important;
-        font-size: 24px !important;
-    }
-}
-
-/* Google Trust Card Layout Fix */
-.google-trust-card {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 12px !important;
-    background: #ffffff !important;
-    padding: 12px 18px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-    width: fit-content !important;
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
-    min-height: unset !important;
-}
-
-.trust-stars {
-    color: #f59e0b !important;
-    font-size: 1rem !important;
-}
-
-.trust-details {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: left !important;
-}
-
-/* Optimize Doctor Portrait Image display */
-.doc-portrait-organic {
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1 / 1 !important;
-    object-fit: cover !important;
+    z-index: 99999 !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Urology Diet Chart Styling */
+.diet-section {
+    background-color: var(--bg-soft);
+}
+
+.diet-card {
+    border: 1px solid var(--border-color) !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.diet-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--rose-dark);
+    margin: 0;
+    padding: 12px 20px;
+}
+
+.bg-rose-light {
+    background-color: var(--rose-light) !important;
+}
+
+.diet-table th {
+    background-color: #f8fafc;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 12px 16px;
+}
+
+.diet-table td {
+    padding: 12px 16px;
+    vertical-align: top;
+    font-size: 0.9rem;
+}
+
+.bg-success-light {
+    background-color: #f0fdf4 !important;
+    color: #166534 !important;
+}
+
+.bg-danger-light {
+    background-color: #fef2f2 !important;
+    color: #991b1b !important;
 }
